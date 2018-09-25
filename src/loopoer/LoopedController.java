@@ -36,12 +36,15 @@ public class LoopedController
 	
 	private void askUser()
 	{
+		RunLoop userRun = new RunLoop();
+		
 		String response = JOptionPane.showInputDialog(null, "what is the distance");
+		
 		while (!validDouble(response))
 		{
 			response = JOptionPane.showInputDialog(null, "nooooo! type in a valid number for the distance");
 		}
-		Object userRun;
+	//allows string to be turned into a int
 		userRun.setDistance(Double.parseDouble(response));
 	}
 		public boolean validInt(String maybeInt)
