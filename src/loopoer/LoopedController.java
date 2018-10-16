@@ -3,41 +3,40 @@ package loopoer;
 //import javax.swing.JOptionPane;
 import java.util.Arraylist;
 
+import javax.swing.JOptionPane;
+
 public class LoopedController
 {
 	public void start()
 	{
 		loopy();
 	}
-<<<<<<< HEAD
+
 }
-=======
-	
+
 	private void loopy()
 	{
 		boolean isDone = false;
 		int count = 0;
-		
+
 		while (!isDone)
 		{
 			JOptionPane.showMessageDialog(null, "Hey");
 			count++;
-			if(count >= 5)
+			if (count >= 5)
 			{
 				isDone = true;
 			}
-			
-			
+
 		}
-		
-		for (int loop = 0; loop < 30; loop += 2 )
+
+		for (int loop = 0; loop < 30; loop += 2)
 		{
 			JOptionPane.showMessageDialog(null, "the loop value is: " + loop);
 		}
-		
-		
+
 	}
-	
+
 	private void askUser()
 	{
 		String response = JOptionPane.showInputDialog(null, "what is the distance");
@@ -48,42 +47,38 @@ public class LoopedController
 		Object userRun;
 		userRun.setDistance(Double.parseDouble(response));
 	}
-		public boolean validInt(String maybeInt)
+
+	public boolean validInt(String maybeInt)
+	{
+		boolean isValid = false;
+
+		try
 		{
-			boolean isValid = false;
-					
-			try
-			{
-						Integer.parseInt(maybeInt);
-						isValid = true;
-						
-			}
-			catch(NumberFormatException error)
-			{
-				JOptionPane.showMessageDialog(null, "You type interger value now ");
-			}
-			return isValid;
-			
-			
+			Integer.parseInt(maybeInt);
+			isValid = true;
+
 		}
-		
-		public boolean validDouble(String maybeDouble)
+		catch (NumberFormatException error)
 		{
-			boolean isValid = false;
-			try 
-			{
-				Double.parseDouble(maybeDouble);
-				isValid = true;
-			}
-			catch(NumberFormatException error)
-			{
-				JOptionPane.showMessageDialog(null, "This requires a double value aka something with a . > )");
-			}
-			return isValid;
+			JOptionPane.showMessageDialog(null, "You type interger value now ");
 		}
-	
-	
-	
-	
+		return isValid;
+
+	}
+
+	public boolean validDouble(String maybeDouble)
+	{
+		boolean isValid = false;
+		try
+		{
+			Double.parseDouble(maybeDouble);
+			isValid = true;
+		}
+		catch (NumberFormatException error)
+		{
+			JOptionPane.showMessageDialog(null, "This requires a double value aka something with a . > )");
+		}
+		return isValid;
+	}
+
 }
->>>>>>> parent of 01e3264... updated userRun
